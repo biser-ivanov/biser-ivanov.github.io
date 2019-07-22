@@ -27,27 +27,28 @@
         <p>To install bootstrap in the terminal type "npm install --save bootstrap"</p>
         <img src="./images/image50.PNG" alt="intsallBootstrap">
         <p>Only installing it will not do the whole work, we also have to tell Angular about its existance. We can do that by updating our angular.json file</p>
+        <p>Note that it is imported before the default styles.css file so we overwrite something if we want</p>
         <img src="./images/image51.PNG" alt="angularJSONupdate">
         <p class="tags">Tags: angular.json bootstrap</p>
     </article>
 
     <article>
         <h1>Two-way data binding</h1>
-        <p>The two-way data binding is when the view and the data source share information simultaneously. It is done by putting our variable in square and round brackets.</p>
+        <p>The two-way data binding is when the view and the class share information simultaneously. It is done by putting our variable in square and round brackets.</p>
         <img src="./images/image100.PNG" alt="twoWayDataBinding">
-        <p>In the data source the shared variable is class property</p>
+        <p>In the class the shared variable is class property</p>
         <img src="./images/image101.PNG" alt="twoWWaybinding">
-        <p>In this where we are using input element if we type in it the result in p element is changed simultaneously</p>
+        <p>In this example we are using input element. If we type in it, the result in p element is updated simultaneously</p>
         <img src="./images/image103.PNG" alt="2wayDatabindBrowser">
         <p class="tags">Tags: [(ngModel)]</p>
     </article>
 
     <article>
-        <h1>Data binding from data source to view with double curly brackets</h1>
+        <h1>Data binding from class to view with string interpolation</h1>
         <p>If in the class we have variable holding some content, we can use that content with double curly braces.</p>
-        <p>Below is a screenshot which shows the variable <span>city</span> with value Sofia</p>
         <img src="./images/image1.PNG" alt="string interpolation">
         <p>And below in the screenshot we can see how to use that variable in the html template. To do that we need to wrap the variable in curly braces.</p>
+        <p>Note that we can also call class methods and run simple logic in the curly braces</p>
         <img src="./images/image2.PNG" alt="string interpolation">
         <p>Below we can see the result in the browser</p>
         <img src="./images/image3.PNG" alt="string interpolation">
@@ -55,10 +56,11 @@
     </article>
    
     <article>
-        <h1>Data binding from data source to view with square brackets</h1>
+        <h1>Property binding from class to view with square brackets</h1>
         <p>From the class/data source we can provide data to the html file by wrapping html property in square brackets</p>
         <img src="./images/image301.PNG" alt="dataBinding">
         <p>And this is how we wrap the html attribute. In the below example we give the value attribute data from our component class.</p>
+        <p>We can bind like this to all properties exisiting on some html element like disabled, value or any other. We can also bind to provide custom data.</p>
         <img src="./images/image302.PNG" alt="viewDataBinding">
         <p>In the double quotes is the variable from the data source which we will assign to the desired property of the html tag.</p>
         <p>And here is the result</p>
@@ -67,12 +69,13 @@
     </article>
    
     <article>
-        <h1>Data binding from view to data source with round brackets</h1>
+        <h1>Event binding from view to class with round brackets</h1>
         <p>We can get data from the template view and use the data in the data source</p>
         <img src="./images/image400.PNG" alt="viewSource">
         <p>With the '#' symbol and then our custom name we can get reference to the html element and then with that reference to use valid html property. The keyup in the example is valid html event. Note that we need to use round brackets when we want to get data from the view. And in the double quotes we are using method from the data source class and providing him the property value which contains the written value in the input.</p>
         <img src="./images/image401.PNG" alt="dataSource">
         <p>Our handler function is method of the class which will get whatever we provide.</p>
+        <p>Keep in mind that between the quotes we can also run simple logic, not only call class methods. Example for simple logic would be to clear the input value.</p>
         <img src="./images/image402.PNG" alt="broswerView">
         <p>More on #reference, they can be used on any html element and we name them the way we want. The reference holds the html element with all its properties. We can use the reference anywhere in the component html/template but only in the template and not in the ts file for example.</p>
         <p class="tags">Tags: (click) (xxx) #xxx reference</p>
@@ -81,8 +84,9 @@
     <article>
         <h1>Element reference and ViewChild</h1>
         <p>There is many ways to obtain data from the view and on of them is with ViewChild on referenced element. First in the view we have to get reference to the element we want to use.</p>
+        <p>Important about the references: they provide access to the whole html element they are applied on, including all the properties of that element. References are visible anywhere in the html file including other html element, but references are not visible outside the html even in the class. To use them in the class we can use ViewChild or provide them as properties on event methods.</p>
         <img src="./images/image450.PNG" alt="viewChild">
-        <p>In the data source we will use the ViewChild decorator and will giv him the reference name. After the result will be ElementRef we can specify that. Then we will in this example just show the value but we need to use the nativeElement on the reference because the element we are accessing is in the DOM.</p>
+        <p>In the data source we will use the ViewChild decorator and will give him the reference name. After the result will be ElementRef we can specify that. Then we will in this example just show the value but we need to use the nativeElement on the reference because the element we are accessing is in the DOM.</p>
         <p>Note that if you are working with ViewChild you will maybe want to use it in the ngAfterViewInit lifecycle hook. Because the first time we will have access to the refferenced element will be after the view is created</p>
         <img src="./images/image451.PNG" alt="viewChild">
         <p>Note that it is not recommended to set values from the nativeElement, use other types of binding if you want to do that. In general it is not good practice to directly set values on native elements</p>
@@ -101,7 +105,18 @@
     </article>
 
     <article>
-        <h1>Using if statement and ng class</h1>
+        <h1>Using ngStyle directive</h1>
+        <p>In the class we will have property which in this case is always true</p>
+        <img src="./images/image480.PNG" alt="ngStyle">
+        <p>ngStyle applies different css property depending on some boolean logic</p>
+        <img src="./images/image481.PNG" alt="ngStyle">
+        <p>Result in the browser is the following</p>
+        <img src="./images/image482.PNG" alt="ngStyle in browser">
+        <p class="tags">Tags: [ngStyle]</p>
+    </article>
+
+    <article>
+        <h1>Using if statement and ngClass directives</h1>
         <p>If we have the following array of objects</p>
         <img src="./images/image700.PNG" alt="listobject">
         <p>With *ngIf and [ngClass] we can manage the behaviour of the elements. With *ngIf we can choose what to show or not. And [ngClass] we can set class property to html element based on some condition.</p>
@@ -125,7 +140,7 @@
     </article>
     
     <article>
-        <h1>Using for loop in Angular</h1>
+        <h1>Using *ngFor loop in Angular</h1>
         <p>It is used by typing *ngFor. In this example we have an array of objects in the data source and for each of them we will provide them to the view.</p>
         <img src="./images/image500.PNG" alt="users">
         <p>Here we will use it with double curly brackets which are usually used for representing string values</p>
@@ -161,7 +176,7 @@
         <img src="./images/image902.PNG" alt="emmiterClassChild">
         <p>And now in the child view we can decide how to get data and what to get. In this case we will get data with click event and provide it to the child data source</p>
         <img src="./images/image903.PNG" alt="emmiterViewChild">
-        <p>The Input decorator can also takes string parameter which is known as alias for renaming the property. For example if in the parent view in round brackets we put for example (examp) then in the alias we have to do it this way @Output('examp') myOwnName; In other words we provide examp property and in the alias we write examp but if we want in the parent component to use it with different name we can set whatever we want after the decorator.</p>
+        <p>The Output decorator can also takes string parameter which is known as alias for renaming the property. For example if in the parent view in round brackets we put for example (examp) then in the alias we have to do it this way @Output('examp') myOwnName; In other words we provide examp property and in the alias we write examp but if we want in the parent component to use it with different name we can set whatever we want after the decorator.</p>
         <p class="tags">Tags: @Output() EventEmitter() [xxx] (xxx)</p>
     </article>
     
@@ -189,7 +204,7 @@
     </article>
     
     <article>
-        <h1>Listening for events with our custom behaviour</h1>
+        <h1>Listening for events with our custom directive</h1>
         <p>In the directives we can define listener for some kind of event and define what behaviour we want to achieve. We do this by using @HostListener</p>
         <img src="./images/image930.PNG" alt="HostListener">
         <p>We can set our custom directive to an element like this</p>
@@ -197,6 +212,28 @@
         <p>And the result on mouse over in this example will be to set orange background</p>
         <img src="./images/image932.PNG" alt="HostListener">
         <p class="tags">Tags: directive Renderer2 @HostListener Event</p>
+    </article>
+
+    <article>
+        <h1>Using custom directive and HostBinding</h1>
+        <p>Host Binding is some kind of alternative to Renderer2 but simpler</p>
+        <img src="./images/image980.PNG" alt="HostBinding">
+        <p>This is how we place the directive on some element</p>
+        <img src="./images/image981.PNG" alt="HostBinding">
+        <p>And here is our result when we mouseover the element</p>
+        <img src="./images/image982.PNG" alt="HostBinding in browser">
+        <p class="tags">Tags: directive ElementRef @HostListener @HostBinding</p>
+    </article>
+
+    <article>
+        <h1>Using custom directive and HostBinding with Inputs</h1>
+        <p>Host Binding is some kind of alternative to Renderer2 but simpler</p>
+        <img src="./images/image990.PNG" alt="HostBinding">
+        <p>This is how we place the directive on some element</p>
+        <img src="./images/image991.PNG" alt="HostBinding">
+        <p>And here is our result when we mouseover the element</p>
+        <img src="./images/image992.PNG" alt="HostBinding in browser">
+        <p class="tags">Tags: directive ElementRef @HostListener @HostBinding</p>
     </article>
     
     <article>
