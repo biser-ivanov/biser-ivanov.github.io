@@ -263,6 +263,7 @@
         <p>If we need to take the params directly from the url we can do the following way</p>
         <img src="./images/image970.PNG" alt="routerParams">
         <p>In the Contacts componentwe will have anchor tag which will open the contact component with url /contact/123/maria</p>
+        <p>Note that our first element starts with / slash. That means it will be an absolute path meaning that it will follow the domain. On the other hand if we dont specify / slash it will be relative path, meaning that the array elements will be concatenated with the current url. This doesnt apply to navigate method on the Router class because the navigate method doenst know about the state of the url.</p>
         <img src="./images/image971.PNG" alt="routerParams">
         <p>Now in the contact component we will get the params from the url. Something very important is that snapshot takes the url in the component creation and if we are changing the url from inside the component the snapshot will not track the changes and params will not change. To fix that in case we need we need to know that ActivatedRoute is observable and we can subscribe to it so anychanges coming from inside the component will update the params. Check the secondary screenshot to see how it works. Also in this case when working with routes Angular will unsubscribe automatically for us in this case</p>
         <img src="./images/image972.PNG" alt="routerParams">
@@ -272,6 +273,23 @@
         <p>And this will be the result in the browser</p>
         <img src="./images/image974.PNG" alt="routerParams">
         <p class="tags">Tags: path routerLink ActivatedRoute</p>
+    </article>
+
+    <article>
+        <h1>Providing queryParams and/or fragment</h1>
+        <h3>Example from an anchor tag</h3>
+        <p>In our anchor tag we can also provide some query parameters to use or fragment. We can do it in the following way.</p>
+        <img src="./images/image1010.PNG" alt="queryParams">
+        <p>And we will get them in the browser url bar, where we can get them with the ActivatedRoute</p>
+        <img src="./images/image1011.PNG" alt="queryParams">
+        <h3>Example programmatically from a class method</h3>
+        <p>We will click button and it will call method where we will provide the query params and the fragment</p>
+        <img src="./images/image1020.PNG" alt="queryParams">
+        <p>And in the method we provide params like this</p>
+        <img src="./images/image1021.PNG" alt="queryParams">
+        <p>And the browser</p>
+        <img src="./images/image1022.PNG" alt="queryParams">
+        <p class="tags">Tags: queryParams fragment</p>
     </article>
     
     <article>
