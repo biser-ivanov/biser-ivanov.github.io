@@ -17,13 +17,43 @@
     <article>
         <h1>The very basic example</h1>
         <p>We would do some change in the App.js file and see the result. Note that for css class we dont use the class word but className instead because class is reserved key word in JS.</p>
+        <p>IMPORTANT to keep in mind is that in the return statement has to return everything wrapped up in one html element. We cant return 2 or more html elements on the main level. Also the round brackets are important so we can write multiline expressions.</p>
         <img src="./images/image1.PNG" alt="the initial">
         <p>And in the browser we will see the following result</p>
         <img src="./images/image2.PNG" alt="the initial">
         <p class="tags">Tags: className</p>
     </article>
     
-
+    <article>
+        <h1>Creating simple functional component</h1>
+        <p>Below is our custom functional component. And also you can see how we can write some valid javascript in the template</p>
+        <img src="./images/image10.PNG" alt="functional component">
+        <p>And we will import and use our custom Person component in the App component</p>
+        <img src="./images/image11.PNG" alt="functional component">
+        <p>And in the browser we get this result</p>
+        <img src="./images/image12.PNG" alt="functional component">
+        <p class="tags">Tags: functional component React</p>
+    </article>
     
+    <article>
+        <h1>Providing props</h1>
+        <p>In the parent component where we place the child component we can provide properties which we can get and use in the child component</p>
+        <p>Also note the content between the component tags, we can also get it and use it in the component.</p>
+        <img src="./images/image20.PNG" alt="providing props">
+        <p>In the component we use the keyword props to get and properties we provided.</p>
+        <p>children is also key word with which we get the content between the component tags</p>
+        <img src="./images/image21.PNG" alt="providing props">
+        <p>And this will be the result.</p>
+        <img src="./images/image22.PNG" alt="providing props">
+        <p class="tags">Tags: props children</p>
+    </article>
+
+    <article>
+        <h1>State of the class</h1>
+        <p>To have more dynamic components we can have state, which holds some data the class will use. And for example we can provide some data from the state to child components more dynamically.</p>
+        <p>And on click we will change the state with the setState method.</p>
+        <img src="./images/image30.PNG" alt="class state">
+        <p class="tags">Tags: state setState onClick</p>
+    </article>
 </body>
 </html>
