@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+
+article {
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+article:nth-child(2n) {
+    background-color: gainsboro;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    padding: 10px;
+    border: 3px dotted green;
+    background-color: white;
+}
+
+.tags {
+    font-size: 1.1em;
+    font-weight: bold;
+}
