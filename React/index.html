@@ -57,10 +57,45 @@
     </article>
 
     <article>
-        <h1></h1>
-        <p></p>
+        <h1>State hook</h1>
+        <p>State hook is giving us the ability to have state in functional components instead of class components. useState method can be called multiple times so it is best practice to use each type of state(like object, array, number, string etc.) in different useState because calling set state all other properties will be deleted.</p>
+        <img src="./images/image40.PNG" alt="function state">
+        <p>On the screenshot you can see we changed the object but we still keep the string "awesome" because it is placed in his own useState method.</p>
+        <img src="./images/image41.PNG" alt="function state">
+        <p class="tags">Tags: hook useState</p>
+    </article>
 
-        <p></p>
+    <article>
+        <h1>Method reference</h1>
+        <p>Sometimes we want the child component to call methods from the parent component. We can do that by providing method reference to the child component. What we do here is we provide the method as props</p>
+        <img src="./images/image50.PNG" alt="method reference">
+        <p>And in the child component we set the props with method reference in this example to click event</p>
+        <img src="./images/image51.PNG" alt="method reference">
+        <p>Below is the same code as above but in this example we provide value as parameter.</p>
+        <img src="./images/image52.PNG" alt="method reference">
+        <p>And once we click on the paragraph we see the updated value</p>
+        <img src="./images/image53.PNG" alt="method reference">
+        <p class="tags">Tags: method reference bind</p>
+    </article>
+
+    <article>
+        <h1>Two-way data binding</h1>
+        <p>This is how we two way data bind</p>
+        <img src="./images/image70.PNG" alt="two-way data binding">
+        <p>This is the child component</p>
+        <img src="./images/image71.PNG" alt="two-way data binding">
+        <p>And we see when we type it is immediately updated</p>
+        <img src="./images/image72.PNG" alt="two-way data binding">
+        <p class="tags">Tags: two-way data binding</p>
+    </article>
+
+    <article>
+        <h1>Inline styles</h1>
+        <p>Sometimes we would want to set some styles inline we can do it in the following way. First we create an object holding all the styles we want to use and then assign that object to the style attribute of the html element.</p>
+        <img src="./images/image80.PNG" alt="inline style">
+        <p>And we get the following result in the browser</p>
+        <img src="./images/image81.PNG" alt="inline style">
+        <p class="tags">Tags: style css</p>
     </article>
 </body>
 </html>
